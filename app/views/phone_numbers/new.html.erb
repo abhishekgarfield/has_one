@@ -1,0 +1,12 @@
+<h1>Add phone number</h1>
+<%= form_with scope:"phoneNumber" ,url: "/users/#{@user[:id]}/phone_numbers" do |form|%>
+
+<div>
+<%=form.label :number%>
+<%=form.text_field :number%>
+<% @phone.errors.full_messages_for(:number).each do |message|%>
+<div><%=message%></div>
+<%end%>
+</div>
+<%=form.submit%>
+<%end%>

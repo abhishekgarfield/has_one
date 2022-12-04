@@ -1,2 +1,9 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<% JSON.parse(@user.to_json).each do |key,value|%>
+<h1><%=key%> <%=value%></h1>
+<%end%>
+<% if @user.phoneNumber %>
+<h1><%= @user.phoneNumber.number%></h1>
+<%else%>
+<%= link_to "add phone number" ,"/users/#{@user[:id]}/phone_numbers/new" %>
+<%end%>
