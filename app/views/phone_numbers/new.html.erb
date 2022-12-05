@@ -4,9 +4,10 @@
 <div>
 <%=form.label :number%>
 <%=form.text_field :number%>
-<% @phone.errors.full_messages_for(:number).each do |message|%>
+<%= @phone.errors.full_messages_for(:number).each do |message|%>
 <div><%=message%></div>
 <%end%>
 </div>
+
 <%=form.submit%>
 <%end%>
